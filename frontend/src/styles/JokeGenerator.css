@@ -1,0 +1,241 @@
+.joke-generator {
+  min-height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.joke-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  max-width: 700px;
+  width: 100%;
+}
+
+.joke-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.joke-icon {
+  font-size: 3rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.joke-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.joke-header p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.joke-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.joke-type-selector {
+  flex: 1;
+  min-width: 150px;
+}
+
+.joke-type-selector label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.joke-type-selector select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #c33;
+}
+
+.joke-display {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.joke-content {
+  background: #f8f9ff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #667eea;
+}
+
+.joke-text {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.joke-setup {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.joke-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  margin: 1rem 0;
+}
+
+.joke-delivery {
+  font-size: 1.2rem;
+  color: #667eea;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.joke-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.share-btn,
+.next-btn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.share-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.share-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.next-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.next-btn:hover {
+  background-color: #fb8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.joke-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+.joke-info p {
+  margin: 0;
+  color: #666;
+}
+
+.joke-info span {
+  font-weight: bold;
+  color: #667eea;
+}
+
+.joke-placeholder {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .joke-container {
+    padding: 1.5rem;
+  }
+
+  .joke-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .joke-controls {
+    flex-direction: column;
+  }
+
+  .joke-actions {
+    flex-direction: column;
+  }
+}
