@@ -1,0 +1,106 @@
+.order-tracking {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-tracking h1 {
+  text-align: center;
+  color: #ff6b35;
+}
+
+.order-info {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+.order-info p {
+  margin: 0.5rem 0;
+}
+
+.order-info strong {
+  color: #ff6b35;
+}
+
+.tracking-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+.timeline-step {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 50%;
+  height: 3px;
+  background-color: #ddd;
+}
+
+.timeline-step.active::after {
+  background-color: #4caf50;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.timeline-step.active .step-circle {
+  background-color: #4caf50;
+}
+
+.timeline-step p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.delivery-info {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+
+.delivery-info h3 {
+  margin-top: 0;
+  color: #1976d2;
+}
+
+.delivery-info p {
+  margin: 0.5rem 0;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #d32f2f;
+}

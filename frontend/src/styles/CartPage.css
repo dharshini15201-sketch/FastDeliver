@@ -1,0 +1,137 @@
+.cart-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.cart-page h1 {
+  grid-column: 1 / -1;
+}
+
+.cart-items {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.item-details p {
+  margin: 0;
+  color: #666;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantity-control button {
+  background-color: #f0f0f0;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.remove-btn {
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #ff4500;
+}
+
+.cart-summary {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.cart-summary h3 {
+  margin-top: 0;
+}
+
+.cart-summary h2 {
+  color: #ff6b35;
+  margin: 1rem 0;
+}
+
+.checkout-btn {
+  display: block;
+  width: 100%;
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.checkout-btn:hover {
+  background-color: #ff4500;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 3rem;
+}
+
+.continue-shopping {
+  display: inline-block;
+  background-color: #ff6b35;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.continue-shopping:hover {
+  background-color: #ff4500;
+}

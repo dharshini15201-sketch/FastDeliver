@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: fastdeliver-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: fastdeliver
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - fastdeliver-network
+
+  backend:
+    image: openjdk:11-jre-slim
+    container_name: fastdeliver-backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/fastdeliver
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root_password
+    depends_on:
+      - mysql
+    networks:
+      - fastdeliver-network
+    command: mvn spring-boot:run
+
+  frontend:
+    image: node:18
+    container_name: fastdeliver-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    networks:
+      - fastdeliver-network
+    command: npm install && npm start
+
+volumes:
+  mysql_data:
+
+networks:
+  fastdeliver-network:
+    driver: bridge
